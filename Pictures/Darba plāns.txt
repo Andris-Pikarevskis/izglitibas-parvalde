@@ -1,0 +1,1 @@
+izveidot divas formas lai izveidot CV, landing lapa divus variantus, kur bus apraksts, kads CV bus un kas taja bus, tad izveidot formas, sakt stradat ar JS
