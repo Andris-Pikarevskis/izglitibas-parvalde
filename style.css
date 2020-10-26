@@ -15,9 +15,9 @@ body {
     overflow-x: hidden;
     font-family: Roboto;
     margin: 0;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), url(Pictures/landing_mob.jpg), #C4C4C4;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
     width: 100%;
-    height: 794px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -284,7 +284,7 @@ a {
 
 .sign-up {
     padding-top: 32px;
-    width: 69px;
+    width: 125px;
     height: 24px;
     font-size: 20px;
     line-height: 23px;
@@ -342,6 +342,7 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    padding-left: 30px;
 }
 
 input {
@@ -362,7 +363,8 @@ input[type='password'] {
     margin: 0 auto;
 }
 
-.name::before {
+
+/* .name::before {
     content: url(Pictures/ICON2.png);
     padding-left: 26px;
     padding-right: 10px;
@@ -378,7 +380,7 @@ input[type='password'] {
     content: url(Pictures/ICON4.png);
     padding-left: 26px;
     padding-right: 10px;
-}
+} */
 
 .button {
     border-style: none;
@@ -492,7 +494,7 @@ input[type='password'] {
 @media(min-width: 1400px) {
     body {
         margin: 0;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), url(Pictures/landing.png), #C4C4C4;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
         width: 100%;
         background-size: cover;
         background-position: center;
@@ -528,7 +530,7 @@ input[type='password'] {
     }
     .Rectangle2 {
         width: 365px;
-        height: 538px;
+        height: 938px;
     }
     input[type='text'],
     input[type='e-mail'],
