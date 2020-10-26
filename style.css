@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
     font-family: Roboto;
     margin: 0;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
+    background: (99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0)), #d5e91e;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -319,7 +319,7 @@ a {
     position: relative;
     z-index: 9;
     width: 400px;
-    height: 545px;
+    height: 845px;
     background: #FFFFFF;
     border-radius: 3px;
     margin: 0 auto;
@@ -459,9 +459,9 @@ input[type='password'] {
 @media(min-width: 786px) {
     body {
         margin: 0;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), url(Pictures/landing.png), #C4C4C4;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(57, 129, 115, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
         width: 100%;
-        height: 804px;
+        height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -472,7 +472,8 @@ input[type='password'] {
     }
     .Rectangle2 {
         width: 353px;
-        height: 538px;
+        height: 838px;
+        margin-bottom: 25px;
     }
     input[type='text'],
     input[type='e-mail'],
@@ -496,6 +497,7 @@ input[type='password'] {
         margin: 0;
         background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
         width: 100%;
+        height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
