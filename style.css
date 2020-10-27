@@ -312,6 +312,11 @@ a {
     background-image: url(Pictures/GOOGLE+.png);
 }
 
+.information-blocks {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /*-------------------------------------Rectangle2--------------------------------------*/
 
@@ -319,7 +324,7 @@ a {
     position: relative;
     z-index: 9;
     width: 400px;
-    height: 845px;
+    height: 545px;
     background: #FFFFFF;
     border-radius: 3px;
     margin: 0 auto;
@@ -342,6 +347,7 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    padding-top: 25px;
     padding-left: 30px;
 }
 
@@ -363,33 +369,14 @@ input[type='password'] {
     margin: 0 auto;
 }
 
-
-/* .name::before {
-    content: url(Pictures/ICON2.png);
-    padding-left: 26px;
-    padding-right: 10px;
-}
-
-.mail::before {
-    content: url(Pictures/ICON3.png);
-    padding-left: 26px;
-    padding-right: 10px;
-}
-
-.password::before {
-    content: url(Pictures/ICON4.png);
-    padding-left: 26px;
-    padding-right: 10px;
-} */
-
 .button {
     border-style: none;
     width: 120px;
     height: 80px;
     font-size: 14px;
     line-height: 16px;
+    margin-left: 80px;
     color: #157e9e;
-    margin: 0 auto;
     background-color: #fff;
 }
 
@@ -472,7 +459,7 @@ input[type='password'] {
     }
     .Rectangle2 {
         width: 353px;
-        height: 838px;
+        height: 545;
         margin-bottom: 25px;
     }
     input[type='text'],
@@ -532,7 +519,12 @@ input[type='password'] {
     }
     .Rectangle2 {
         width: 365px;
-        height: 938px;
+        height: 545px;
+    }
+    .information-blocks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
     input[type='text'],
     input[type='e-mail'],
