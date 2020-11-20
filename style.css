@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
     font-family: Roboto;
     margin: 0;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(57, 129, 115, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
+    background:  #e6e5d4;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -24,247 +24,8 @@ body {
 }
 
 header {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFFFF;
-    width: 425px;
-    width: 100%;
     height: 70px;
-    background: rgba(0, 0, 0, 0.4);
     margin-bottom: 52px;
-}
-
-.nav-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1440px;
-}
-
-.logo {
-    width: 150px;
-    height: 22px;
-    font-size: 18px;
-    line-height: 21px;
-    padding-top: 24px;
-    padding-left: 13px;
-}
-
-
-/*-------------------------------------------desktop nav------------------------------------------*/
-
-.desktop-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    font-size: 12px;
-    margin-right: 40px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFFFF;
-}
-
-.components {
-    margin-top: 25px;
-    padding-right: 5px;
-}
-
-.icon {
-    margin-top: 20px;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-    background-image: url(Pictures/ICON1.png);
-}
-
-.download {
-    margin-top: 25px;
-    padding-right: 10px;
-}
-
-.twiter {
-    margin-top: 25px;
-    width: 19px;
-    height: 23px;
-    margin-right: 24px;
-    background-repeat: no-repeat;
-    background-image: url(Pictures/TWITTER.png);
-}
-
-.facebook {
-    margin-top: 23px;
-    width: 18px;
-    height: 20px;
-    margin-right: 35px;
-    background-repeat: no-repeat;
-    background-image: url(Pictures/FACEBOOK.png);
-}
-
-.instagram {
-    margin-top: 23px;
-    margin-left: -11px;
-    width: 18px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-image: url(Pictures/INSTAGRAM.png)
-}
-
-@media (max-width: 786px) {
-    .desktop-nav {
-        display: none;
-    }
-}
-
-
-/*--------------------------------------mobīlās-navigācijas-poga------------------------------------*/
-
-.menu-icon {
-    z-index: 19;
-    position: relative;
-    display: none;
-    width: 30px;
-    height: 30px;
-}
-
-@media(max-width: 786px) {
-    .menu-icon {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        margin-top: 20px;
-        margin-right: 23px;
-    }
-}
-
-.menu-icon-line {
-    position: relative;
-    width: 22px;
-    height: 2px;
-    background-color: #fff;
-}
-
-.menu-icon-line::before {
-    position: absolute;
-    left: 0;
-    top: -4px;
-    content: '';
-    width: 22px;
-    height: 2px;
-    background-color: #fff;
-    -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
-    transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
-    -o-transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
-}
-
-.menu-icon-line::after {
-    position: absolute;
-    left: 0;
-    top: 4px;
-    content: '';
-    width: 22px;
-    height: 2px;
-    background-color: #fff;
-    -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
-    transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
-    -o-transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
-}
-
-.menu-icon.menu-icon-active .menu-icon-line {
-    background-color: transparent;
-}
-
-.menu-icon.menu-icon-active .menu-icon-line::before {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 0;
-    -webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
-    transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
-    -o-transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
-    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
-    transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
-}
-
-.menu-icon.menu-icon-active .menu-icon-line::after {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 0;
-    -webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
-    transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
-    -o-transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
-    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
-    transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
-}
-
-
-/*-----------------------mobilā-navigācija-----------------------------*/
-
-.mobile-nav {
-    margin-top: 70px;
-    z-index: 20;
-    display: block;
-    position: absolute;
-    right: -300px;
-    top: 0;
-    height: 100%;
-    width: 300px;
-    padding-top: 24px;
-    padding-left: 75px;
-    color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.mobile-nav--active {
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
-}
-
-.mobile-nav-title {
-    font-size: 18px;
-    line-height: 21px;
-}
-
-.mobile-nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.mobile-nav__item:first-child {
-    margin-top: 45px;
-}
-
-.mobile-nav__item {
-    margin-top: 30px;
-}
-
-.mobile-nav__link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
 }
 
 
@@ -273,7 +34,7 @@ a {
 .Rectangle1 {
     position: relative;
     z-index: 19;
-    width: 360px;
+    width: 560px;
     height: 150px;
     background: -webkit-gradient(linear, left top, right top, from(#77b4ce), to(#06587e));
     -webkit-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.12), 0px 5px 15px rgba(0, 0, 0, 0.5);
@@ -284,32 +45,12 @@ a {
 
 .sign-up {
     padding-top: 32px;
-    width: 125px;
+    width: 325px;
     height: 24px;
     font-size: 20px;
     line-height: 23px;
     color: #FFFFFF;
     margin: 0 auto;
-}
-
-.sign-up-with {
-    z-index: 19;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-top: 36px;
-}
-
-.google {
-    margin-top: 23px;
-    width: 24px;
-    height: 18px;
-    margin-left: 11px;
-    background-repeat: no-repeat;
-    background-image: url(Pictures/GOOGLE+.png);
 }
 
 .information-blocks {
@@ -327,6 +68,10 @@ h2 {
     margin: 0 auto;
 }
 
+.text2{
+padding-top: 15px;
+padding-left: 20px;
+}
 
 /*-------------------------------------Rectangle2--------------------------------------*/
 
@@ -339,7 +84,9 @@ h2 {
     border-radius: 3px;
     margin: 0 auto;
     margin-top: -25px;
+    padding: 5px;
 }
+
 
 .obc {
     padding-top: 142px;
@@ -361,6 +108,10 @@ h2 {
     padding-left: 30px;
 }
 
+.input1{
+    padding-left: 20px;
+}
+
 input {
     border-top: none;
     border-left: none;
@@ -371,12 +122,18 @@ input {
 input[type='text'],
 input[type='e-mail'],
 input[type='password'] {
-    width: 300px;
-    padding-top: 50px;
-    padding-bottom: 7px;
+    width: 30px;
+    padding-top: 45px;
     font-size: 14px;
     color: #999999;
     margin: 0 auto;
+}
+
+textarea{
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: justify;
 }
 
 .button {
@@ -396,75 +153,25 @@ input[type='password'] {
 }
 
 
-/*--------------------------------footer----------------------------------------*/
-
-.footer-meny {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFFFF;
-    margin: 0 auto;
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
-
-.CreativeTim {
-    width: 100px;
-    height: 15px;
-    padding-left: 9px;
-}
-
-.Aboutus {
-    width: 55px;
-    height: 15px;
-    margin-left: 34px;
-}
-
-.Blog {
-    width: 31px;
-    height: 15px;
-    margin-left: 34px;
-}
-
-.Licenses {
-    width: 55px;
-    height: 15px;
-    margin-left: 34px;
-}
-
-.footer-logo {
-    width: 215px;
-    height: 17px;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFFFF;
-    margin: 0 auto;
-}
-
-
 /*-----------------------------------------------------Tablet--------------------------------------------------------------------*/
 
 @media(min-width: 786px) {
     body {
         margin: 0;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(57, 129, 115, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
+        background:  #e6e5d4;
         width: 100%;
         height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
+    .information-blocks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .Rectangle1 {
-        width: 314px;
+        width: 350px;
         height: 150px;
     }
     .Rectangle2 {
@@ -492,7 +199,7 @@ input[type='password'] {
 @media(min-width: 1400px) {
     body {
         margin: 0;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(99.99%, rgba(98, 206, 184, 0.4)), to(rgba(98, 206, 184, 0))), #d5e91e;
+        background:  #e6e5d4;
         /* width: 100%;
         height: 100%; */
         background-size: cover;
@@ -509,58 +216,32 @@ input[type='password'] {
         background: none;
         margin-bottom: none;
     }
-    .logo {
-        width: 150px;
-        height: 22px;
-        font-size: 18px;
-        line-height: 21px;
-        padding-top: 39px;
-        margin-left: 144px;
-    }
-    .desktop-nav {
-        font-size: 12px;
-        line-height: 14px;
-        margin-top: 36px;
-        margin-right: 150px;
-    }
+  
+ 
     .Rectangle1 {
-        width: 324px;
+        width: 350px;
         height: 150px;
     }
     .Rectangle2 {
-        width: 365px;
-        height: 545px;
+        width: 380px;
+        height: 500px;
     }
-    .information-blocks {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
+
+  .rectangle3{
+    width: 380px;
+    height: 945px;
+    background: #FFFFFF;
+    border-radius: 3px;
+    margin: 25px auto;
+    padding: 15px;
+  }
+
     input[type='text'],
     input[type='e-mail'],
     input[type='password'] {
-        width: 269px;
+        width: 320px;
     }
-    .desktopfooter {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        margin-top: 24px;
-        margin-left: 160px;
-        margin-right: 144px;
-        margin-bottom: 24px;
-    }
-    .footer-logo {
-        width: 300px;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
+    input{
+        text-align: center;
     }
 }
