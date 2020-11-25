@@ -51,7 +51,6 @@ $id = ($lastId > 0) ? $lastId : (int) $_GET['id'];
 $query = sprintf("SELECT * FROM content WHERE id = %s", $id);
 $data = $db->rawQuery($query);
 
-die;
 if (empty($data[0]['content']) || $id == 0) {
         exit('Wrong id' );
 }
