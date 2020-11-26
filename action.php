@@ -46,7 +46,6 @@ if(isset($_POST['submitForm'])) {
 
 <?php
 
-
 $id = ($lastId > 0) ? $lastId : (int) $_GET['id'];
 $query = sprintf("SELECT * FROM content WHERE id = %s", $id);
 $data = $db->rawQuery($query);
@@ -56,25 +55,6 @@ if (empty($data[0]['content']) || $id == 0) {
 }
 
 $data = json_decode($data[0]['content'], false);
-
-$str = '';
-for ($i = 0; $i < count($data->if_fit_status); $i++) {
-
-        if ($data->if_fit_status[$i] == 1 && !empty($data->fit_url[$i])) { //atbilst prasībām
-                $str .= sprintf('<p>Tīmekļvietne</p><br><p><input type="checkbox" id="" name="" value="" checked><strong> pilnīgi atbilst </strong>noteikumiem Nr: 445</p><p><input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes un/vai mobilās lietotnes)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_url[$i]);
-        } 
-        
-        if ($data->if_fit_status[$i] == 2 && (!empty($data->fit_url[$i])) || (!empty($data->fit_reason[$i]))) { //daļēji atbilst
-                $str .= (!empty($data->fit_url[$i])) ? sprintf('<p><input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes un/vai mobilās lietotnes)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_url[$i]) : '';
-                $str .= (!empty($data->fit_reason[$i])) ? sprintf('<p><input type="text" name="" placeholder="(norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus)" class="iestades-nosaukums1" value="%s"></p><br>',  $data->fit_reason[$i]) : '';
-        } 
-
-        if ($data->if_fit_status[$i] == 0  && (!empty($data->fit_url[$i])) || (!empty($data->fit_reason[$i]))) { //neatbilst prasībām
-                $str .= '<p><br />Tīmekļvietne</p><p><strong><input type="checkbox" name="" value="" checked> neatbilst </strong>noteikumiem Nr: 445 šādu neatbilstību/atbrīvojumu dēļ:</p>';
-                $str .= (!empty($data->fit_url[$i])) ? sprintf('<p> <input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_url[$i]) : '';
-                $str .= (!empty($data->fit_reason[$i])) ? sprintf('<p><input type="text" name="" placeholder="(norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_reason[$i]) : '';
-        }
-}
 
 ?>
 <body>
@@ -86,13 +66,38 @@ for ($i = 0; $i < count($data->if_fit_status); $i++) {
             placeholder="(norādīt tīmekļvietnes/mobilās lietotnes adresi - URL; var būt vairākas)"
             class="iestades-nosaukums" 
             value="<?= $data->url; ?>"></p>
-
         <p><br /> Izvērtējums tika veikts, izmantojot: 
         <input type="text" name="" placeholder="(norādīt izmantoto izvērtēšanas metodi; ja izmantotas atšķirīgas metodes, norādīt visas atbilstoši to izmantošanai)" class="iestades-nosaukums" value="<?= $data->method; ?>"></p>
         <p><br /> Izvērtējumu apliecinošs dokuments: 
         <input type="text" name="" placeholder="(pievienot hipersaiti uz izvērtējumu apliecinošu dokumentu, protokolu, pārskatu vai citu līdzvērtīgu dokumentu)" class="iestades-nosaukums" value="<?= $data->protocol_url; ?>"></p>
         <br><br><h2>Atbilstības statuss</h2>
         <p><em>Atzīmēt vajadzīgo - vienu no Šādiem veidiem</em>:</p>
+
+
+        <?php
+
+        $str = '';
+
+        foreach ($data->if_fit_status as $k => $v) {
+                if ($v == 1) {
+                        $str .= sprintf('<p>Tīmekļvietne</p><br><p><input type="checkbox" id="" name="" value="" checked><strong> pilnīgi atbilst </strong>noteikumiem Nr: 445</p><p><input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes un/vai mobilās lietotnes)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_url[$k]);
+                }
+
+                if ($v == 2) {
+                        $str .= '<p><br /> Tīmekļvietne</p><p><strong><input type="checkbox" id="" name="" value="" checked> daļēji atbilst </strong>noteikumiem Nr: 445 šādu neatbilstību/atbrīvojumu dēļ:</p>';
+                        $str .= (!empty($data->fit_url[$k])) ? sprintf('<p><input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes un/vai mobilās lietotnes)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_url[$k]) : '';
+                        $str .= (!empty($data->fit_reason[$k])) ? sprintf('<p><textarea rows="15" placeholder="(norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus)" class="iestades-nosaukums1">%s</textarea></p>',  $data->fit_reason[$k]) : '';
+                }
+
+                if ($v == 0) {
+                        $str .= '<p><br />Tīmekļvietne</p><p><strong><input type="checkbox" name="" value="" checked> neatbilst </strong>noteikumiem Nr: 445 šādu neatbilstību/atbrīvojumu dēļ:</p>';
+                        $str .= (!empty($data->fit_url[$k])) ? sprintf('<p> <input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_url[$k]) : '';
+                        $str .= (!empty($data->fit_reason[$k])) ? sprintf('<p><input type="text" name="" placeholder="(norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus)" class="iestades-nosaukums1" value="%s"></p>', $data->fit_reason[$k]) : '';
+                }
+        }
+
+?>
+
 
         <!-- <p>Tīmekļvietne</p><br>
         <p><input type="checkbox" name="" value="" <?php if ($data->if_fit_status == 1) echo "checked" ?>><strong> pilnīgi atbilst </strong>noteikumiem Nr: 445</p>
@@ -113,12 +118,28 @@ for ($i = 0; $i < count($data->if_fit_status); $i++) {
 
         <h2>Nepiekļūstamais saturs</h2>
         <br><p><em>Atzīmēt vajadzīgo - vienu no šādiem veidiem atbilstoši izvēlētajam atbilstības statusam</em>:</p><br>
-        <p><strong><input type="checkbox" name="" value="" <?php if ($data->if_inaccessible_content == 0) echo "checked"; ?>>Neatbilstība prasībām</strong>, kas minētas noteikumos Nr. 445</p>
-        <p><input type="text" name="" placeholder="(norādīt tīmekļvietņu/mobilo lietotņu neatbilstības un/vai norādīt, kuras sadaļas/saturs/funkcijas nav atbilstošas piekļūstamības prasībām)" class="iestades-nosaukums1"></p><br>
-        <p><input type="checkbox" name="" value="" <?php if ($data->if_inaccessible_content == 1) echo "checked"; ?>>Noteikumos Nr. 445 minēto <strong>piekļūstamības prasību nodrošināšana rada nesamērīgu slogu</strong></p>
-        <p><input type="text"  name="" placeholder="(norādīt nepiekļūstamās sadaļas/saturu/funkcijas, uz kurām atbilstoši minēto noteikumu prasībām uz laiku ir attiecināts atbrīvojums nesamērīga sloga dēļ)" class="iestades-nosaukums1"></p><br>
-        <p><strong><input type="checkbox" name="" value="" <?php if ($data->if_inaccessible_content == 2) echo "checked"; ?>>Neattiecas. </strong>Uz saturu neattiecas noteikumu Nr. 445 prasības</p>
-        <p><input type="text" name="" placeholder="(norādīt nepiekļūstamās iedaļas/saturu/funkcijas, uz kurām neattiecas minēto noteikumu prasības)" class="iestades-nosaukums1"></p><br><br>
+
+
+<?php 
+        
+        if ($data->if_inaccessible_content == 0) {
+                echo '<p><strong><input type="checkbox" name="" value="" checked>Neatbilstība prasībām</strong>, kas minētas noteikumos Nr. 445</p>';
+                echo sprintf('<p><input type="text" name="" placeholder="(norādīt tīmekļvietņu/mobilo lietotņu neatbilstības un/vai norādīt, kuras sadaļas/saturs/funkcijas nav atbilstošas piekļūstamības prasībām)" class="iestades-nosaukums1" value="%s"></p><br>', $data->inaccessible_reason);
+        }
+
+        if ($data->if_inaccessible_content == 1) {
+                echo '<p><input type="checkbox" name="" value="" checked; ?>>Noteikumos Nr. 445 minēto <strong>piekļūstamības prasību nodrošināšana rada nesamērīgu slogu</strong></p>';
+                echo sprintf('<p><input type="text"  name="" placeholder="(norādīt nepiekļūstamās sadaļas/saturu/funkcijas, uz kurām atbilstoši minēto noteikumu prasībām uz laiku ir attiecināts atbrīvojums nesamērīga sloga dēļ)" class="iestades-nosaukums1" value="%s"></p><br>', $data->inaccessible_reason);
+        }
+        
+        if ($data->if_inaccessible_content == 2) {
+                echo '<p><strong><input type="checkbox" name="" value="" checked>Neattiecas. </strong>Uz saturu neattiecas noteikumu Nr. 445 prasības</p>';
+                echo sprintf('<p><input type="text" name="" placeholder="(norādīt nepiekļūstamās iedaļas/saturu/funkcijas, uz kurām neattiecas minēto noteikumu prasības)" class="iestades-nosaukums1" value="%s"></p><br><br>',  $data->inaccessible_reason);
+        }
+
+?>
+        
+        
         <h2>Piekļūstamības alternatīvas</h2> <div class="pieklustamibas-saturs">(atbilstoši atbilstības statusam un nepiekļūstamajam saturam)</div><br>
         <p> <input type="text" name="" placeholder="(norādīt piekļūstamības alternatīvas, to saņemšanas iespējas u. c. informāciju atbilstoši alternatīvai)" class="iestades-nosaukums1" value="<?= $data->access_alternative; ?>"></p><br>
         <h2>Ziņas par paziņojuma sagatavošanu </h2><br>
