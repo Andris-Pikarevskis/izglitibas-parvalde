@@ -28,7 +28,7 @@
             <div class="information-fields">
                 <div class="Rectangle2">
                         <h2 class="block-title">Piekļūstamības paziņojums</h2>
-                        <div class="ievades-lauli">
+                        <div class="ievades-lauki">
                                 <div class="name">
                                     <input type="text" name="name" placeholder="iestādes nosaukums">
 
@@ -74,7 +74,7 @@
                 <div class="Rectangle2">
                     <h2 class="block-title">Nepiekļūstamais saturs</h2><br>
                     <div class="text2">Atzīmēt vajadzīgo – atbilstoši izvēlētajam statusam:</div><br>
-                    <div class="ievades-lauli">
+                    <div class="ievades-lauki">
                             <input type="checkbox" name="if_inaccessible_content" value="0">
                             <label for="">Neatbilstība prasībām</label><br>
                             <input type="checkbox" name="if_inaccessible_content" value="1">
@@ -96,7 +96,7 @@
             <div class="down-block1">
                 <h2 class="block-title">Piekļūstamības alternatīvas</h2><br>
                 <div class="text2">(atbilstoši atbilstības statusam un nepiekļūstamajam saturam)</div><br>
-                <div class="ievades-lauli">
+                <div class="ievades-lauki">
                         <div class="name">
                             <textarea rows="4" cols="38" name="access_alternative"
                                 placeholder="norādīt tīmekļvietņu neatbilstības un norādīt, kuras sadaļas/saturs/funkcijas nav atbilstošas piekļūstamības prasībām."></textarea>
@@ -107,7 +107,7 @@
 
             <div class="down-block2">
                 <h2 class="block-title">Ziņas par paziņojuma sagatavošanu</h2><br><br>
-                <div class="ievades-lauli">
+                <div class="ievades-lauki">
                         <div class="name">
                             <textarea rows="4" cols="38" name="note_first_date"
                                 placeholder="(norādīt PIRMREIZĒJĀ paziņojuma sagatavošanas datumu)"></textarea><br>
@@ -121,16 +121,14 @@
         </div>
         
         </form>
-
     </main>
-
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $('.add-more-fit-status').click(function() {
         $('.more-fit-status-container').append(
-            '<div class="Rectangle2"><div class="text2">Atzīmēt vajadzīgo – atbilstoši izvēlētajam statusam:</div><div class="ievades-lauli"><input type="checkbox" name="if_fit_status[]" value="1"><label for="">pilnīgi atbilst </label><br><input type="checkbox" name="if_fit_status[]" value="0"><label for="">neatbilst </label><br><input type="checkbox" name="if_fit_status[]" value="2"><label for="">daļēji atbilst </label><div class="name"><input type="text" name="fit_url[]" placeholder="Tīmekļvietne"><textarea rows="15" name="fit_reason[]" placeholder="norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus"></textarea></div></div></div>'
+            '<div class="Rectangle2"><div class="text2">Atzīmēt vajadzīgo – atbilstoši izvēlētajam statusam:</div><div class="ievades-lauki"><input type="checkbox" name="if_fit_status[]" value="1"><label for="">pilnīgi atbilst </label><br><input type="checkbox" name="if_fit_status[]" value="0"><label for="">neatbilst </label><br><input type="checkbox" name="if_fit_status[]" value="2"><label for="">daļēji atbilst </label><div class="name"><input type="text" name="fit_url[]" placeholder="Tīmekļvietne"><textarea rows="15" name="fit_reason[]" placeholder="norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus"></textarea></div></div></div>'
         );
     });
 </script>
