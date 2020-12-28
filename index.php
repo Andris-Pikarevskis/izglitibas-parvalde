@@ -12,6 +12,7 @@
     <link rel="manifest" href="Pictures/favicon/site.webmanifest">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
 </head>
 
 <body>
@@ -49,10 +50,9 @@
             <div class="information-fields">
             <div class="Rectangle2">
                     <h2 class="block-title">Atbilstības status</h2>
-                    <button type="button" class="add-more-fit-status">Add more (+)</button>
                     <br>
                     <div class="text2">Atzīmēt vajadzīgo – atbilstoši izvēlētajam statusam:</div><br>
-                    <div class="ievades-lauli">
+                    <div class="ievades-lauki">
                             <input type="checkbox" name="if_fit_status[]" value="1">
                             <label for="">pilnīgi atbilst </label><br>
                             <input type="checkbox" name="if_fit_status[]" value="0">
@@ -60,11 +60,12 @@
                             <input type="checkbox" name="if_fit_status[]" value="2">
                             <label for="">daļēji atbilst </label>
 
-                            <div class="name">
+                            <div class="teksts">
                                 <input type="text" name="fit_url[]" placeholder="Tīmekļvietne">
-                                <textarea rows="15" name="fit_reason[]"
+                                <textarea name="fit_reason[]"
                                 placeholder="norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus"></textarea>
                             </div>
+                            <button type="button" class="add-more-fit-status">Pievienot vēl vienu lauku (+)</button>
                     </div>
                 </div>
             <div class="more-fit-status-container">
@@ -82,9 +83,9 @@
                             <input type="checkbox" name="if_inaccessible_content" value="2">
                             <label for="">Uz saturu neattiecas noteikumu prasības</label>
 
-                            <div class="name">
+                            <div class="teksts">
                                 <input type="text" name="inaccessible_url" placeholder="Tīmekļvietne">
-                                <textarea rows="15" cols="38" name="inaccessible_reason"
+                                <textarea name="inaccessible_reason"
                                     placeholder="norādīt tīmekļvietņu neatbilstības un norādīt, kuras sadaļas/saturs/funkcijas nav atbilstošas piekļūstamības prasībām."></textarea>
                             </div>
                     </div>
@@ -97,8 +98,8 @@
                 <h2 class="block-title">Piekļūstamības alternatīvas</h2><br>
                 <div class="text2">(atbilstoši atbilstības statusam un nepiekļūstamajam saturam)</div><br>
                 <div class="ievades-lauki">
-                        <div class="name">
-                            <textarea rows="4" cols="38" name="access_alternative"
+                        <div class="teksts">
+                            <textarea  name="access_alternative"
                                 placeholder="norādīt tīmekļvietņu neatbilstības un norādīt, kuras sadaļas/saturs/funkcijas nav atbilstošas piekļūstamības prasībām."></textarea>
                         </div>
                 </div>
@@ -108,17 +109,18 @@
             <div class="down-block2">
                 <h2 class="block-title">Ziņas par paziņojuma sagatavošanu</h2><br><br>
                 <div class="ievades-lauki">
-                        <div class="name">
-                            <textarea rows="4" cols="38" name="note_first_date"
+                        <div class="teksts">
+                            <textarea  name="note_first_date"
                                 placeholder="(norādīt PIRMREIZĒJĀ paziņojuma sagatavošanas datumu)"></textarea><br>
-                            <textarea rows="4" cols="38" name="note_remind_date"
+                            <textarea " name="note_remind_date"
                                 placeholder="(norādīt paziņojuma ATKRTOTĀ pārskatīšanas datumu; nenorāda, ja šis ir pirmreizējais paziņojums)"></textarea><br>
                         </div>
                 </div>
             </div>
-            <input type="submit" name="submitForm" class="button" value="submit">
+            
 
         </div>
+        <input type="submit" name="submitForm" class="button" value="Izveidot dokumentu">
         
         </form>
     </main>

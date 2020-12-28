@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/output.css">
+    <style>
+            
+    <?php echo file_get_contents('css/reset.css'); ?>
+    <?php echo file_get_contents('css/output.css'); ?>
+    </style>
 </head>
 
 <?php
@@ -68,21 +71,6 @@ $data = json_decode($data[0]['content'], false);
         }
 
 ?>
-
-        <!-- <p>Tīmekļvietne</p><br>
-        <p><input type="checkbox" name="" value="" <?php if ($data->if_fit_status == 1) echo "checked" ?>><strong> pilnīgi atbilst </strong>noteikumiem Nr: 445</p>
-        <p><input type="text"  name="" placeholder="(var norādīt vairākas tīmekļvietnes un/vai mobilās lietotnes)" class="iestades-nosaukums1"></p>
-   
-        <br><p><br /> Tīmekļvietne</p>
-        <p><strong><input type="checkbox" id="" name="" value="" <?php if ($data->if_fit_status == 2) echo "checked" ?>> daļēji atbilst </strong>noteikumiem Nr: 445 šādu neatbilstību/atbrīvojumu dēļ:</p>
-        <p> <input type="text"  name="" placeholder="(var norādīt vairākas tīmekļvietnes un/vai mobilās lietotnes)" class="iestades-nosaukums1"></p>
-        <p><input type="text" name="" placeholder="(norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus)" class="iestades-nosaukums1"></p><br>
-
-        <p><br />Tīmekļvietne</p>
-        <p><strong><input type="checkbox" name="" value="" <?php if ($data->if_fit_status == 0) echo "checked" ?>> neatbilst </strong>noteikumiem Nr: 445 šādu neatbilstību/atbrīvojumu dēļ:</p>
-        <p> <input type="text" name="" placeholder="(var norādīt vairākas tīmekļvietnes)" class="iestades-nosaukums1"></p>
-
-        <p><input type="text" name="" placeholder="(norādīt neatbilstošo saturu vai pamatot atbrīvojumu, norādot attiecīgos minēto noteikumu punktus)" class="iestades-nosaukums1"></p> -->
 
         <?= $str; ?>
 

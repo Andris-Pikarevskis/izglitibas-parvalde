@@ -86,7 +86,6 @@ padding-left: 20px;
     border-radius: 3px;
     margin: 0 auto;
     margin-top: -25px;
-    padding: 5px;
 }
 
 .rectangle3{
@@ -129,6 +128,7 @@ padding-left: 20px;
 
 .ievades-lauki{
     margin-top: 30px;
+    margin-left: 30px;
 }
 
 .input1{
@@ -158,29 +158,39 @@ textarea{
     padding: 5px;
     border-radius: 5px;
     text-align: justify;
+    min-height: 150px;
+    min-width: 315px;
+    resize: none;
 }
 
 .down-block1{
-height: 250px;
-width: 350px;
+height: 350px;
+width: 380px;
 margin-right: 5%;
 background-color: #fff;
 }
 
 .down-block2{
-    height: 250px;
-    width: 350px;
+    height: 450px;
+    width: 380px;
     margin-left: 5%;
     background-color: #fff;
     }
 
 .button {
     border-style: none;
-    width: 120px;
+    width: 150px;
     height: 80px;
+    border-radius: 5px;
     font-size: 14px;
     line-height: 16px;
     margin-left: 80px;
     color: #157e9e;
+    margin: 20px 0 70px 70px;
     background-color: #fff;
+    cursor: pointer;
+}
+.add-more-fit-status{
+    margin: 20px 0 0 70px;
+    cursor: pointer;
 }
