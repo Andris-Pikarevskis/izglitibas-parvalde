@@ -122,7 +122,9 @@
         </div>
         <input type="submit" name="submitForm" class="button" value="Izveidot dokumentu">
         
+        
         </form>
+        
     </main>
 </body>
 

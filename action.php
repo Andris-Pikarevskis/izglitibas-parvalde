@@ -50,9 +50,9 @@ $id = ($lastId > 0) ? $lastId : (int) $_GET['id'];
 $query = sprintf("SELECT * FROM content WHERE id = %s", $id);
 $data = $db->rawQuery($query);
 
-if (empty($data[0]['content']) || $id == 0) {
-        exit('Wrong id' );
-}
+// if (empty($data[0]['content']) || $id == 0) {
+//         exit('Wrong id' );
+// }
 
 $data = json_decode($data[0]['content'], false);
 

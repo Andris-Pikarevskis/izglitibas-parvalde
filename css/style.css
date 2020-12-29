@@ -148,7 +148,7 @@ input[type='password'] {
     width: 270px;
     padding-top: 45px;
     font-size: 14px;
-    color: #999999;
+    /* color: #999999; */
     margin: 0 auto;
     text-align: center;
 }
@@ -177,19 +177,22 @@ background-color: #fff;
     background-color: #fff;
     }
 
-.button {
-    border-style: none;
-    width: 150px;
-    height: 80px;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 16px;
-    margin-left: 80px;
-    color: #157e9e;
-    margin: 20px 0 70px 70px;
-    background-color: #fff;
-    cursor: pointer;
-}
+    .button {
+        border-style: none;
+        width: 150px;
+        height: 80px;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 16px;
+        margin-left: 80px;
+        /* color: #157e9e; */
+        margin: 20px 0 70px 70px;
+        /* background-color: #fff; */
+        cursor: pointer;
+    }
+    
+
+        
 .add-more-fit-status{
     margin: 20px 0 0 70px;
     cursor: pointer;
